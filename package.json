@@ -26,4 +26,9 @@
     "url": "https://github.com/gabrielhrng/portfolio/issues"
   },
   "homepage": "https://github.com/gabrielhrng/portfolio#readme"
+
+  "scripts": {
+    "start": "node server.js"
+  },
+  
 }
