@@ -5,9 +5,10 @@
   "name": "portfolio",
   "description": "study web application",
   "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
-
+  "main": "server.js",
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gabrielhrng/portfolio.git"
@@ -24,10 +25,10 @@
     "url": "https://github.com/gabrielhrng/portfolio/issues"
   },
   "homepage": "https://github.com/gabrielhrng/portfolio#readme",
-
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "parcel build ./public/index.html",
+    "dev": "parcel serve ./public/index.html"
   }
-
 }
