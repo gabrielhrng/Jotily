@@ -1,23 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
 <head>
-  <title>Jotily: Web Application V1</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>deco3100a3test</title>
+	<meta name="author" content="Gabriel Ng" />
+	<meta name="description" content="deco3100a3" />
+	<meta name="keywords"  content="fullpage,jquery,demo,simple" />
+	<meta name="Resource-type" content="Document" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--fullpage.js was a way I could make the slides real fancy, Credits:Alvaro Trigo @ https://alvarotrigo.com/fullPage/  here -->
+	<link rel="stylesheet" type="text/css" href="./src/fullpage.js" /> 
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+		<style>
+		h1{
+			font-size: 5em;
+			font-family: arial,helvetica;
+			color: #fff;
+			margin:0;
+		}
+		.intro p{
+			color: #fff;
+		}
+		.section{
+			text-align:center;
+		}
+		.fp-slidesNav.bottom{
+			bottom: 25px;
+		}
+		#infoMenu li a {
+			color: #fff;
+		}
+		#section2 h1{
+			color: #333;
+		}
+		</style>
 </head>
+
 <body>
-  <h1>Hello, beautiful world!</h1>
-  <div id="fullpage">
-    <div class="section active">Some section
-      <div class="slide" id="slide1">
-				<p class="blurb">
-					This scatter plot depics tweets with negative sentiment. Negative sentiment here is classified as any tweet that is less than 0 sentiment. Trends seen here:
-					<br></br>
-    </div>
-    <div class="section">Some section</div>
-    <div class="section">Some section</div>
-    <div class="section">Some section</div>
-  </div>
+	<div id="fullpage">
+		<div class="section active" id="section0">
+			<div class="slide active" id="slide1" data-anchor="slide1">
+				<div class="intro">
+					<div id='janplotDiv' style="width: 75%; height: 800px;"></div>
+	
+				</div>
+			</div>
+			<div class="slide" id="slide2" data-anchor="slide2">
+				<div class="grid-container">
+				<div class="main">
+					<h1 style="text-align: left;">JANUARY 2017</h1>	
+					<p style="text-align: left;">The January of 2017 marked the first month of Donald J. Trumps Presidency. 						<br></br>
+						Nunc sed lacus quis turpis faucibus tristique sit amet ac est. Nullam mattis eleifend placerat. Ut eros massa, faucibus sed dui at, commodo fermentum nulla. Aenean vel euismod felis. Ut hendrerit eros a gravida venenatis. Etiam quam mauris, gravida vel semper sagittis, iaculis et tellus. Quisque ultricies at enim eu vehicula. Cras sed urna risus. Duis blandit est nibh, ac semper elit condimentum in. Aliquam eleifend congue mauris, quis maximus tellus varius non. Suspendisse elementum ullamcorper mi, eu hendrerit diam suscipit nec. Sed ac risus aliquam, volutpat arcu eu, placerat augue. Nullam mattis consequat lacus, ac mollis sapien dignissim sit amet. Donec libero neque, pharetra sit amet eros eu, rutrum posuere justo. Proin ultricies elementum magna, nec consequat leo varius vitae. Ut fringilla metus consectetur elit dictum hendrerit.
+						<br></br>						
+						Phasellus quis sem dictum, interdum metus quis, aliquam tellus. Nunc in mollis urna. Nam tincidunt, arcu viverra tempus elementum, nisl odio rhoncus mauris, id blandit nisl risus id lacus.
+					</p>
+					</div>
+				</div>
+			</div>
+			<div class="slide" id="slide3" data-anchor="slide3">
+				<h1>Slide 1.3</h1>
+					<div id='janfreq'></div>
+			</div>
+		</div>
+
+
+		<div class="section active" id="section1">
+			<div class="slide active" id="slide1" data-anchor="slide1">
+				<div class="intro">
+					<div id='mayplotDiv' style="width: 75%; height: 800px;"></div>
+					<h1>MAY</h1>		
+				</div>
+			</div>
+			<div class="slide" id="slide2" data-anchor="slide2">
+				<div class="intro">
+
+				</div>
+			</div>
+			<div class="slide" id="slide3" data-anchor="slide3">
+				<h1>Slide 2.3</h1>
+			</div>
+		</div>
+
+		<div class="section" id="section2">
+			<div class="intro">
+
+				<div id='junplotDiv' style="width: 75%; height: 800px"></div>
+				<h1>JUNE</h1>
+			</div>
+		</div>
+
+		<div class="section" id="section3">
+			<div class="intro">
+
+				<div id='julplotDiv' style="width: 75%; height: 800px"></div>
+				<h1>JULY</h1>
+			</div>
+		</div>
+
+		<div class="section" id="section4">
+			<div class="intro">
+
+			<div id='novplotDiv' style="width: 75%; height: 800px"></div>
+			<h1>NOVEMBER</h1>
+			</div>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript">
+		var myFullpage = new fullpage('#fullpage', {
+			sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#FDA50F', 'whitesmoke', '#ccddff'],
+			anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage','5thpage', 'lastPage'],
+			menu: '#menu',
+			slidesNavigation: true,
+			lazyLoad: true
+			
+		});
+	</script>
+
 </body>
 </html>
