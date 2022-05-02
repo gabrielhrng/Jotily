@@ -71,6 +71,7 @@ p{
 }
 .section{
 	text-align:center;
+	display: block;
 }
 #menu li {
 	display:inline-block;
