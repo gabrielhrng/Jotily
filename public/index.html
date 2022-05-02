@@ -3,14 +3,15 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Active Slide - fullPage.js</title>
-    <meta name="author" content="Matthew Howell" />
-    <meta name="description" content="fullPage continuous scrolling demo." />
+    <title>Jotily: Web Study Application</title>
+    <meta name="author" content="Gabriel Ng" />
+    <meta name="description" content="Jotily: Web Study Application" />
     <meta name="keywords"  content="fullpage,jquery,demo,scroll,loop,continuous" />
     <meta name="Resource-type" content="Document" />
 
 
     <link rel="stylesheet" type="text/css" href="src/fullpage.css" />
+    <link rel="stylesheet" href="src/jkanban.min.css">
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <!--[if IE]>
@@ -18,71 +19,49 @@
              var console = { log: function() {} };
         </script>
     <![endif]-->
+    <style>
+        body {
+          font-family: "Verdana";
+          margin: 0;
+          padding: 0;
+        }
+  
+        #myKanban {
+          overflow-x: auto;
+          padding: 20px 0;
+        }
+  
+        .success {
+          background: #00b961;
+        }
+  
+        .info {
+          background: #fb7d44;
+        }
+  
+        .warning {
+          background: #f4ce46;
+        }
+  
+        .error {
+          background: #fb7d44;
+        }
+  
+        .custom-button {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 7px 15px;
+          margin: 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }      
+      </style>
 </head>
 <body>
 
-<ul id="menu">
-    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First slide</a></li>
-    <li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
-    <li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
-</ul>
-
-
-<select id="demosMenu">
-    <option selected>Choose Demo</option>
-    <option id="simple">Simple</option>
-    <option id="custom-arrows">Custom arrows</option>
-    <option id="hide-sections">Hide sections</option>
-    <option id="scroll-after-fullpage">Scroll after fullpage</option>
-    <option id="observer">Observer</option>
-    <option id="jquery-adapter">jQuery adapter</option>
-    <option id="active-slide">Active section and slide</option>
-    <option id="auto-height">Auto height</option>
-    <option id="autoplay-video-and-audio">Autoplay Video and Audio</option>
-    <option id="backgrounds">Background images</option>
-    <option id="backgrounds-fixed">Fixed fullscreen backgrounds</option>
-    <option id="background-video">Background video</option>
-    <option id="callbacks">Callbacks</option>
-    <option id="continuous-horizontal">Continuous horizontal (premium)</option>
-    <option id="continuous-vertical">Continuous vertical</option>
-    <option id="parallax">Parallax (premium)</option>
-    <option id="cards">Cards 3d (premium)</option>
-    <option id="water-effect">Water effect (premium)</option>
-    <option id="drop-effect">Drop effect (premium)</option>
-    <option id="css3">CSS3</option>
-    <option id="drag-and-move">Drag And Move (premium)</option>
-    <option id="easing-css3">Easing CSS</option>
-    <option id="easing-js">Easing JS</option>
-    <option id="fading-effect">Fading Effect (premium)</option>
-    <option id="fixed-headers">Fixed headers</option>
-    <option id="gradient-backgrounds">Gradient backgrounds</option>
-    <option id="interlocked-slides">Interlocked Slides (premium)</option>
-    <option id="looping">Looping</option>
-    <option id="methods">Methods</option>
-    <option id="navigation-vertical">Vertical navigation dots</option>
-    <option id="navigation-horizontal">Horizontal navigation dots</option>
-    <option id="navigation-tooltips">Navigation tooltips</option>
-    <option id="no-anchor">No anchor links</option>
-    <option id="normal-scroll">Normal scrolling</option>
-    <option id="normalScrollElements">Normal scroll elements</option>
-    <option id="offset-sections">Offset sections (premium)</option>
-    <option id="one-section">One single section</option>
-    <option id="reset-sliders">Reset sliders (premium)</option>
-    <option id="responsive-auto-height">Responsive Auto Height</option>
-    <option id="responsive-height">Responsive Height</option>
-    <option id="responsive-width">Responsive Width</option>
-    <option id="responsive-slides">Responsive Slides (premium)</option>
-    <option id="scrollBar">Scroll bar enabled</option>
-    <option id="scroll-horizontally">Scroll horizontally (premium)</option>
-    <option id="scrollOverflow">Scroll inside sections and slides</option>
-    <option id="scrollOverflow-reset">ScrollOverflow Reset (premium)</option>
-    <option id="lazy-load">Lazy load</option>
-    <option id="scrolling-speed">Scrolling speed</option>
-    <option id="trigger-animations">Trigger animations</option>
-    <option id="vue-fullpage">Vue component</option>
-    <option id="react-fullpage">React component</option>
-    <option id="angular-fullpage">Angular component</option>
-</select>
 
 <div id="fullpage">
     <div class="section " id="section0">
@@ -96,13 +75,171 @@
         </div>
         <div class="slide active" id="slide2">
             <div class="intro">
-                <h1>Slide 2.2</h1>
-                <p>
-                    We are using the class `active` on this section and in this particular horizontal slide. This way it will appear on the viewport on page load, instead of the 1st section 1st slide.
-                </p>
+                <h1>Welcome Back Gabriel</h1>
+                <div id="myKanban"></div>
+                <script src="src/jkanban.js"></script>
+                <script>
+                  var KanbanTest = new jKanban({
+                    element: "#myKanban",
+                    gutter: "10px",
+                    widthBoard: "450px",
+                    itemHandleOptions:{
+                      enabled: true,
+                    },
+                    click: function(el) {
+                      console.log("Trigger on all items click!");
+                    },
+                    context: function(el, e) {
+                      console.log("Trigger on all items right-click!");
+                    },
+                    dropEl: function(el, target, source, sibling){
+                      console.log(target.parentElement.getAttribute('data-id'));
+                      console.log(el, target, source, sibling)
+                    },
+                    buttonClick: function(el, boardId) {
+                      console.log(el);
+                      console.log(boardId);
+                      // create a form to enter element
+                      var formItem = document.createElement("form");
+                      formItem.setAttribute("class", "itemform");
+                      formItem.innerHTML =
+                        '<div class="form-group"><textarea class="form-control" rows="2" autofocus></textarea></div><div class="form-group"><button type="submit" class="btn btn-primary btn-xs pull-right">Submit</button><button type="button" id="CancelBtn" class="btn btn-default btn-xs pull-right">Cancel</button></div>';
+            
+                      KanbanTest.addForm(boardId, formItem);
+                      formItem.addEventListener("submit", function(e) {
+                        e.preventDefault();
+                        var text = e.target[0].value;
+                        KanbanTest.addElement(boardId, {
+                          title: text
+                        });
+                        formItem.parentNode.removeChild(formItem);
+                      });
+                      document.getElementById("CancelBtn").onclick = function() {
+                        formItem.parentNode.removeChild(formItem);
+                      };
+                    },
+                    itemAddOptions: {
+                      enabled: true,
+                      content: '+ Add New Task',
+                      class: 'custom-button',
+                      footer: true
+                    },
+                    boards: [
+                      {
+                        id: "_todo",
+                        title: "To Do",
+                        class: "info,good",
+                        dragTo: ["_working"],
+                        item: [
+                          {
+                            id: "_test_delete",
+                            title: "Try drag this (Look the console)",
+                            drag: function(el, source) {
+                              console.log("START DRAG: " + el.dataset.eid);
+                            },
+                            dragend: function(el) {
+                              console.log("END DRAG: " + el.dataset.eid);
+                            },
+                            drop: function(el) {
+                              console.log("DROPPED: " + el.dataset.eid);
+                            }
+                          },
+                          {
+                            title: "Try Click This!",
+                            click: function(el) {
+                              alert("click");
+                            },
+                            context: function(el, e){
+                              alert("right-click at (" + `${e.pageX}` + "," + `${e.pageX}` + ")")
+                            },
+                            class: ["peppe", "bello"]
+                          }
+                        ]
+                      },
+                      {
+                        id: "_progress",
+                        title: "In Progress",
+                        class: "warning",
+                        item: [
+                          {
+                            title: "Do Something!"
+                          },
+                          {
+                            title: "Run?"
+                          }
+                        ]
+                      },
+                      {
+                        id: "_done",
+                        title: "Done",
+                        class: "success",
+                        dragTo: ["_working"],
+                        item: [
+                          {
+                            title: "All right"
+                          },
+                          {
+                            title: "Ok!"
+                          }
+                        ]
+                      }
+                    ]
+                  });
+            
+                  var toDoButton = document.getElementById("addToDo");
+                  toDoButton.addEventListener("click", function() {
+                    KanbanTest.addElement("_todo", {
+                      title: "Test Add"
+                    });
+                  });
+            
+                  var toDoButtonAtPosition = document.getElementById("addToDoAtPosition");
+                  toDoButtonAtPosition.addEventListener("click", function() {
+                    KanbanTest.addElement("_todo", {
+                      title: "Test Add at Pos"
+                    }, 1);
+                  });
+            
+                  var addBoardDefault = document.getElementById("addDefault");
+                  addBoardDefault.addEventListener("click", function() {
+                    KanbanTest.addBoards([
+                      {
+                        id: "_default",
+                        title: "Kanban Default",
+                        item: [
+                          {
+                            title: "Default Item"
+                          },
+                          {
+                            title: "Default Item 2"
+                          },
+                          {
+                            title: "Default Item 3"
+                          }
+                        ]
+                      }
+                    ]);
+                  });
+            
+                  var removeBoard = document.getElementById("removeBoard");
+                  removeBoard.addEventListener("click", function() {
+                    KanbanTest.removeBoard("_done");
+                  });
+            
+                  var removeElement = document.getElementById("removeElement");
+                  removeElement.addEventListener("click", function() {
+                    KanbanTest.removeElement("_test_delete");
+                  });
+            
+                  var allEle = KanbanTest.getBoardElements("_todo");
+                  allEle.forEach(function(item, index) {
+                    //console.log(item);
+                  });
+                </script>
                 <p>You can apply the same logic to horizontal slides</p>
             </div>
         </div>
+        
         <div class="slide" id="slide3">
             <h1>Slide 2.3</h1>
         </div>
@@ -116,6 +253,7 @@
 </div>
 
 <script type="text/javascript" src="src/fullpage.js"></script>
+<script src="src/jkanban.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
