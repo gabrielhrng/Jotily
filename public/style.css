@@ -305,15 +305,15 @@ h1{
 }
 
 #section1{
-	background-image: linear-gradient(128deg,#A0C089,#7ab4b0);
+	background-image: linear-gradient(180deg,#A0C089,#7ab4b0);
 }
 
 #section2{
-	background-image: linear-gradient(128deg,#fc40ff,#543fff);
+	background-image: linear-gradient(0deg,#A0C089,#7ab4b0);
 }
 
 #section3{
-	background-image: linear-gradient(128deg,#40fff2,#3fbcff);
+	background-image: linear-gradient(128deg,#A0C089,#7ab4b0);
 }
 
 .container {  display: grid;
