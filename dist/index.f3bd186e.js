@@ -1,4 +1,6 @@
-document.getElementById('demosMenu').addEventListener('change', function(e){
+document.getElementById('demosMenu').addEventListener('change', function(e) {
     var dropdown = document.getElementById('demosMenu');
     window.location.href = dropdown.options[dropdown.selectedIndex].getAttribute('id') + '.html';
 });
+
+//# sourceMappingURL=index.f3bd186e.js.map
