@@ -8,10 +8,16 @@
     <meta name="description" content="Jotily: Web Study Application" />
     <meta name="keywords"  content="fullpage,jquery,demo,scroll,loop,continuous" />
     <meta name="Resource-type" content="Document" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <link rel="stylesheet" type="text/css" href="src/fullpage.css" />
     <link rel="stylesheet" href="src/jkanban.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+  />
+    <link rel="stylesheet" type="text/css" href="src/player.css">
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <!--[if IE]>
@@ -244,26 +250,53 @@
     <div class="section" id="section2">
         <div class="slide" id="slide1">
             <div class="intro">
-            <br></br>
-                <h1>Music Player</h1>
-            </div>
-        </div>
+                  <h1>Music Player</h1>
+                  <div class="container">
+                      <div class="main">
+                        <div class="player">
+                          <div class="details">
+                            <div class="now-playing">PLAYING x OF y</div>
+                            <div class="track-art"></div>
+                            <div class="track-name">Track Name</div>
+                            <div class="track-artist">Track Artist</div>
+                          </div>
+                          <div class="buttons">
+                            <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+                            <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+                            <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+                          </div>
+                          <div class="slider_container">
+                            <div class="current-time">00:00</div>
+                            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                            <div class="total-duration">00:00</div>
+                          </div>
+                          <div class="slider_container">
+                            <i class="fa fa-volume-down"></i>
+                            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                            <i class="fa fa-volume-up"></i>
+                          </div>
+                        </div>
+                    
+                      </div>
+                    </div>
+              </div>
         <div class="slide" id="slide2">
-          <h1>Link Saver</h1>
+                <h1>Link Saver</h1>
         </div>
         <div class="slide" id="slide3">
-          <h1>Stop watch</h1>
+                <h1>Stop Watch</h1>
         </div>
     </div>
 </div>
 
 <script type="text/javascript" src="src/fullpage.js"></script>
 <script src="src/jkanban.min.js"></script>
+<script src="src/player.js"></script>
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
         sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+        anchors: ['Jotily/Kanban', 'Jotily/Utility', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
         slidesNavigation: true,
         lazyLoad: true,
