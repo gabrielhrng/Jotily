@@ -13,11 +13,13 @@
 
     <link rel="stylesheet" type="text/css" href="src/fullpage.css" />
     <link rel="stylesheet" href="src/jkanban.min.css">
+        <!--kanban plugin courtesy of @riktar on github-->
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
   />
     <link rel="stylesheet" type="text/css" href="src/player.css">
+        <!--music player plugin courtesy of @sayantanm19 on github-->
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <!--[if IE]>
@@ -131,9 +133,10 @@
                           {
                             id: "_todo",
                             title: "To Do",
+                                              /*to change or edit the title, do I need to create a new function in the javascript?*/
                             class: "info,good",
                             dragTo: ["_working"],
-                            item: [
+                           /* item: [
                               {
                                 id: "_test_delete",
                                 title: "Try drag this (Look the console)",
@@ -157,34 +160,35 @@
                                 },
                                 class: ["peppe", "bello"]
                               }
-                            ]
+                            ]*/
                           },
                           {
                             id: "_working",
                             title: "Working",
                             class: "warning",
-                            item: [
+                           /* item: [
                               {
-                                title: "Do Something!"
+                                title: "test 1"
                               },
                               {
-                                title: "Run?"
+                                title: "test 2"
                               }
-                            ]
+                            ] */
+                            /*add items that already exist on the board*/
                           },
                           {
                             id: "_done",
                             title: "Done",
                             class: "success",
                             dragTo: ["_working"],
-                            item: [
+                            /*item: [
                               {
                                 title: "All right"
                               },
                               {
                                 title: "Ok!"
                               }
-                            ]
+                            ] */
                           }
                         ]
                       });
@@ -296,7 +300,7 @@
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
         sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-        anchors: ['Jotily/Kanban', 'Jotily/Utility', '3rdPage', '4thpage', 'lastPage'],
+        anchors: ['Jotily/Kanban', 'Jotily/Utility'],
         menu: '#menu',
         slidesNavigation: true,
         lazyLoad: true,

@@ -79,6 +79,7 @@ p {
 
 .section {
   text-align: center;
+  display: block;
 }
 
 #menu li {
@@ -314,15 +315,29 @@ h1 {
 }
 
 #section1 {
-  background-image: linear-gradient(128deg, #ff9a3f, #ff4b40);
+  background-image: linear-gradient(#a0c089, #7ab4b0);
 }
 
 #section2 {
-  background-image: linear-gradient(128deg, #fc40ff, #543fff);
+  background-image: linear-gradient(0deg, #a0c089, #7ab4b0);
 }
 
 #section3 {
-  background-image: linear-gradient(128deg, #40fff2, #3fbcff);
+  background-image: linear-gradient(128deg, #a0c089, #7ab4b0);
+}
+
+.container {
+  grid-template: ". . ." .2fr
+                 ". main ." 2.6fr
+                 ". . ." .2fr
+                 / .4fr 2.2fr .4fr;
+  grid-auto-flow: row;
+  gap: 0;
+  display: grid;
+}
+
+.main {
+  grid-area: main;
 }
 
 /*# sourceMappingURL=index.83d9161e.css.map */
