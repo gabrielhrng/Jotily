@@ -1,0 +1,66 @@
+body {
+    background-color: hsl(0, 0%, 100%);
+    color: #ffffff;
+  }
+  
+  h1 {
+    font-size: 48px;
+
+    font-weight: 200;
+  
+    text-align: center;
+    line-height: 59px;
+    margin: 0;
+  }
+  
+  .stopwatch {
+    display: grid;
+    justify-items: center;
+    grid-row-gap: 23px;
+    width: 100%;
+    padding-top: 25px;
+  }
+  
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 270px;
+    width: 270px;
+  
+    border: 2px solid;
+    border-radius: 50%;
+    color: #ffffff;
+  }
+  
+  .time {
+    font-family: "alata", sans-serif;
+    font-weight: 300;
+    font-size: 48px;
+    color:#ffffff
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+  
+    width: 187px;
+  }
+  
+  button {
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin: 0;
+    outline: none;
+  }
+  
+  #playButton {
+    display: block;
+  }
+  
+  #pauseButton {
+    display: none;
+  }

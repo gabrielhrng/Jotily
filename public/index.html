@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Jotily: Web Study Application</title>
+    <link rel="icon" type="image/x-icon" href="img/Jotily.ico">
     <meta name="author" content="Gabriel Ng" />
     <meta name="description" content="Jotily: Web Study Application" />
     <meta name="keywords"  content="fullpage,jquery,demo,scroll,loop,continuous" />
@@ -22,6 +23,7 @@
   />
     <link rel="stylesheet" type="text/css" href="src/player.css">
         <!--music player plugin courtesy of @sayantanm19 on github-->
+    <link rel="stylesheet" type="text/css" href="src/stopwatch.css">
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <!--[if IE]>
@@ -75,7 +77,48 @@
 
 <div id="fullpage">
     <div class="section active" id="section1">
-
+        <div class="slide" id="slide1">
+          <h1>Add To Task list</h1>
+          <br></br>
+          <div class="container">
+            <div class="main">
+              <form id="taskform">
+                <label for="task">Task:</label>
+                <input type="text" name="task" id="taskInput">
+          
+                <br>
+              <!-- Date input -->
+                <label for="dueDate">Due Date: </label>
+                <input type="date" name="dueDate" id="dueDateInput">
+                <br>
+              <!-- Time input -->
+              <label for="completionTime">Completion Time: </label>
+                <input type="time" name="completionTime" id="completionTimeInput">
+          
+                <br>
+          
+              <label for="estimatedTime">Estimated completion time (in mins):</label>
+              <input type="number" name="estimatedTime" id="estimatedTimeInput">
+              <!-- Priority -->
+              <br>
+          
+              <label for="priority">Task Priority:</label>
+              <select name="prority" id="priorityInput">
+                <option value="">Select one</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+          
+              <br>
+          
+                <button type="submit">Submit</button>
+              </form>
+              <ul id="tasklist">
+              </ul>
+            </div>
+          </div>
+        </div>
         <div class="slide active" id="slide2">
             <div class="intro">
                 <h1>Welcome Back Gabriel.</h1>
@@ -195,7 +238,7 @@
                         ]
                       });
                 
-                      var toDoButton = document.getElementById("addToDo");
+                      /*var toDoButton = document.getElementById("addToDo");
                       toDoButton.addEventListener("click", function() {
                         KanbanTest.addElement("_todo", {
                           title: "Test Add"
@@ -228,7 +271,7 @@
                             ]
                           }
                         ]);
-                      });
+                      });*/
                 
                       var removeBoard = document.getElementById("removeBoard");
                       removeBoard.addEventListener("click", function() {
@@ -287,17 +330,74 @@
                     </div>
               </div>
         <div class="slide" id="slide2">
-                <h1>Link Saver</h1>
-        </div>
+                <h1>Reading List Creator</h1>
+                <br></br>
+                  <div class="container">
+                    <div class="main">
+                      <div id="wrapper">
+                        <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+                        <tr>
+                        <th>Website</th>
+                        <th>URL</th>
+                        <th>Date Accessed</th>
+                        </tr>
+                        
+                        <tr id="row1">
+                        <td id="website_row1">Youtube</td>
+                        <td id="url_row1">https://www.youtube.com/</td>
+                        <td id="date_row1">2022/08/19</td>
+                        <td>
+                        <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                        <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                        <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
+                        </td>
+                        </tr>
+                        
+                        <tr>
+                        <td><input type="text" id="new_website"></td>
+                        <td><input type="text" id="new_url"></td>
+                        <td><input type="text" id="new_date"></td>
+                        <td><input type="button" class="add" onclick="add_row();" value="Add Reference"></td>
+                        </tr>
+                        
+                        </table>
+                        </div>
+                    </div>
+                  </div>
         <div class="slide" id="slide3">
                 <h1>Stop Watch</h1>
+                <br></br>
+                  <div class="container">
+                    <div class="main">
+                      <div class="stopwatch">
+                        <div class="circle">
+                          <span class="time" id="display">00:00:00</span>
+                        </div>
+                  
+                        <div class="controls">
+                          <button class="buttonPlay">
+                            <img id="playButton" src="img/play-button.svg" />
+                  
+                            <img id="pauseButton" src="img/pause-button.svg" />
+                          </button>
+                  
+                          <button class="buttonReset">
+                            <img id="resetButton" src="img/reset-button.svg" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
         </div>
     </div>
 </div>
 
 <script type="text/javascript" src="src/fullpage.js"></script>
+<script src="src/addtasklist.js"></script>
 <script src="src/jkanban.min.js"></script>
 <script src="src/player.js"></script>
+<script src="src/stopwatch.js"></script>
+<script src="src/readinglist.js"></script>
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {

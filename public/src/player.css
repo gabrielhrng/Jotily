@@ -26,20 +26,24 @@
   
   .now-playing {
     font-size: 1rem;
+    color: whitesmoke;
   }
   
   .track-name {
     font-size: 3rem;
+    color:whitesmoke;
   }
   
   .track-artist {
     font-size: 1.5rem;
+    color:whitesmoke;
   }
   
   .buttons {
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: whitesmoke;
   }
   
   .playpause-track, .prev-track, .next-track {

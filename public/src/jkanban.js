@@ -235,6 +235,11 @@
           formItem.setAttribute('class', _attribute + ' not-draggable')
           board.appendChild(formItem)
           return self
+
+          let delButton = document.createElement("button");
+          let delButtonText = document.createTextNode("Delete");
+          delButton.appendChild(delButtonText);
+          item.appendChild(delButton); 
         }
     
         this.addBoards = function (boards, isInit) {
@@ -366,6 +371,8 @@
             boardNode.appendChild(footerBoard)
             //board add
             self.container.appendChild(boardNode)
+
+            
           }
           return self
         }
