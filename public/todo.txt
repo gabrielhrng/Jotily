@@ -1,0 +1,14 @@
+19/05 to do
+
+MAJOR TASKS:
+> combine tasklist and kanban board
+    > in here also on click to show details of task.
+
+> Reading list, to open multiple tabs
+
+> Create flowtime table/tracker 
+
+MINOR TASKS:
+> Have changes persist in local storage.
+> Remove tasks button from task board.
+> Fix up general look to make more consistent.
