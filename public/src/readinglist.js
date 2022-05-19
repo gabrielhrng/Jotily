@@ -3,7 +3,7 @@ $("form").submit(function(e){
     var website = $("input[website='website']").val();
     var url = $("input[website='url']").val();
 
-    $(".data-table tbody").append("<tr data-website='"+website+"' data-url='"+url + "'><td>"+website+"</td><td>" + "<a href="+url+">"+ website +"</a>"+"</td><td><button class='btn btn-info btn-xs btn-edit'>Edit</button><button class='btn btn-danger btn-xs btn-delete'>Delete</button></td></tr>");
+        $(".data-table tbody").append("<tr data-website='"+website+"' data-url='"+url + "'><td>"+website+"</td><td>" + "<a href="+url+" target = \"_blank\">"+ website +"</a>"+"</td><td><button class='btn btn-info btn-xs btn-edit'>Edit</button><button class='btn btn-danger btn-xs btn-delete'>Delete</button></td></tr>");
 
     $("input[website='website']").val('');
     $("input[website='url']").val('');
