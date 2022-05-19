@@ -10,8 +10,7 @@ const taskInput = document.getElementById("taskInput");
 button.addEventListener("click", function(event) {
   event.preventDefault(); // Not as necessary for button, but needed for form submit
   
-  let task = form.elements.task.value; // could be swapped out for line below
-  //let task = taskInput.value;
+  let task = form.elements.task.value;
   
   let date = (new Date()).toLocaleDateString('en-US') //Convert to short date format
   

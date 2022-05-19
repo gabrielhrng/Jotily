@@ -1,51 +1,52 @@
-function edit_row(no)
-{
- document.getElementById("edit_button"+no).style.display="none";
- document.getElementById("save_button"+no).style.display="block";
-	
- var website=document.getElementById("website_row"+no);
- var url=document.getElementById("url_row"+no);
- var date=document.getElementById("date_row"+no);
-	
- var website_data=website.innerHTML;
- var url_data=url.innerHTML;
- var date_data=date.innerHTML;
-	
- website.innerHTML="<input type='text' id='website_text"+no+"' value='"+website_data+"'>";
- url.innerHTML="<input type='text' id='url_text"+no+"' value='"+url_data+"'>";
- date.innerHTML="<input type='text' id='date_text"+no+"' value='"+date_data+"'>";
-}
+$("form").submit(function(e){
+    e.preventDefault();
+    var website = $("input[website='website']").val();
+    var url = $("input[website='url']").val();
 
-function save_row(no)
-{
- var website_val=document.getElementById("website_text"+no).value;
- var url_val=document.getElementById("url_text"+no).value;
- var date_val=document.getElementById("date_text"+no).value;
+    $(".data-table tbody").append("<tr data-website='"+website+"' data-url='"+url + "'><td>"+website+"</td><td>" + "<a href="+url+">"+ website +"</a>"+"</td><td><button class='btn btn-info btn-xs btn-edit'>Edit</button><button class='btn btn-danger btn-xs btn-delete'>Delete</button></td></tr>");
 
- document.getElementById("website_row"+no).innerHTML=website_val;
- document.getElementById("url_row"+no).innerHTML=url_val;
- document.getElementById("date_row"+no).innerHTML=date_val;
+    $("input[website='website']").val('');
+    $("input[website='url']").val('');
+});
 
- document.getElementById("edit_button"+no).style.display="block";
- document.getElementById("save_button"+no).style.display="none";
-}
+$("body").on("click", ".btn-delete", function(){
+    $(this).parents("tr").remove();
+});
 
-function delete_row(no)
-{
- document.getElementById("row"+no+"").outerHTML="";
-}
+$("body").on("click", ".btn-edit", function(){
+    var website = $(this).parents("tr").attr('data-website');
+    var url = $(this).parents("tr").attr('data-url');
 
-function add_row()
-{
- var new_website=document.getElementById("new_website").value;
- var new_url=document.getElementById("new_url").value;
- var new_date=document.getElementById("new_date").value;
-	
- var table=document.getElementById("data_table");
- var table_len=(table.rows.length)-1;
- var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='website_row"+table_len+"'>"+new_website+"</td><td id='url_row"+table_len+"'>"+new_url+"</td><td id='date_row"+table_len+"'>"+new_date+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+    $(this).parents("tr").find("td:eq(0)").html('<input website="edit_name" value="'+website+'">');
+    $(this).parents("tr").find("td:eq(1)").html('<input website="edit_email" value="'+url+'">');
 
- document.getElementById("new_website").value="";
- document.getElementById("new_url").value="";
- document.getElementById("new_date").value="";
-}
+    $(this).parents("tr").find("td:eq(2)").prepend("<button class='btn btn-info btn-xs btn-update'>Update</button><button class='btn btn-warning btn-xs btn-cancel'>Cancel</button>")
+    $(this).hide();
+});
+
+$("body").on("click", ".btn-cancel", function(){
+    var website = $(this).parents("tr").attr('data-website');
+    var url = $(this).parents("tr").attr('data-url');
+
+    $(this).parents("tr").find("td:eq(0)").text(website);
+    $(this).parents("tr").find("td:eq(1)").html("<a href=\""+url+"\">"+ website +"</a>");
+
+    $(this).parents("tr").find(".btn-edit").show();
+    $(this).parents("tr").find(".btn-update").remove();
+    $(this).parents("tr").find(".btn-cancel").remove();
+});
+
+$("body").on("click", ".btn-update", function(){
+    var website = $(this).parents("tr").find("input[website='edit_name']").val();
+    var url = $(this).parents("tr").find("input[website='edit_email']").val();
+
+    $(this).parents("tr").find("td:eq(0)").text(website);
+    $(this).parents("tr").find("td:eq(1)").html("<a href=\""+url+"\">"+ website +"</a>");
+
+    $(this).parents("tr").attr('data-website', website);
+    $(this).parents("tr").attr('data-url', url);
+
+    $(this).parents("tr").find(".btn-edit").show();
+    $(this).parents("tr").find(".btn-cancel").remove();
+    $(this).parents("tr").find(".btn-update").remove();
+});

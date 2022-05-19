@@ -24,6 +24,8 @@
     <link rel="stylesheet" type="text/css" href="src/player.css">
         <!--music player plugin courtesy of @sayantanm19 on github-->
     <link rel="stylesheet" type="text/css" href="src/stopwatch.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <!--[if IE]>
@@ -181,20 +183,8 @@
                                               /*to change or edit the title, do I need to create a new function in the javascript?*/
                             class: "info,good",
                             dragTo: ["_working"],
-                           /* item: [
-                              {
-                                id: "_test_delete",
-                                title: "Try drag this (Look the console)",
-                                drag: function(el, source) {
-                                  console.log("START DRAG: " + el.dataset.eid);
-                                },
-                                dragend: function(el) {
-                                  console.log("END DRAG: " + el.dataset.eid);
-                                },
-                                drop: function(el) {
-                                  console.log("DROPPED: " + el.dataset.eid);
-                                }
-                              },
+                            item: [
+                            
                               {
                                 title: "Try Click This!",
                                 click: function(el) {
@@ -205,40 +195,23 @@
                                 },
                                 class: ["peppe", "bello"]
                               }
-                            ]*/
+                            ]
                           },
                           {
                             id: "_working",
                             title: "Working",
                             class: "warning",
-                           /* item: [
-                              {
-                                title: "test 1"
-                              },
-                              {
-                                title: "test 2"
-                              }
-                            ] */
-                            /*add items that already exist on the board*/
                           },
                           {
                             id: "_done",
                             title: "Done",
                             class: "success",
                             dragTo: ["_working"],
-                            /*item: [
-                              {
-                                title: "All right"
-                              },
-                              {
-                                title: "Ok!"
-                              }
-                            ] */
                           }
                         ]
                       });
                 
-                      /*var toDoButton = document.getElementById("addToDo");
+                      var toDoButton = document.getElementById("addToDo");
                       toDoButton.addEventListener("click", function() {
                         KanbanTest.addElement("_todo", {
                           title: "Test Add"
@@ -271,7 +244,7 @@
                             ]
                           }
                         ]);
-                      });*/
+                      });
                 
                       var removeBoard = document.getElementById("removeBoard");
                       removeBoard.addEventListener("click", function() {
@@ -334,34 +307,32 @@
                 <br></br>
                   <div class="container">
                     <div class="main">
-                      <div id="wrapper">
-                        <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
-                        <tr>
-                        <th>Website</th>
-                        <th>URL</th>
-                        <th>Date Accessed</th>
-                        </tr>
-                        
-                        <tr id="row1">
-                        <td id="website_row1">Youtube</td>
-                        <td id="url_row1">https://www.youtube.com/</td>
-                        <td id="date_row1">2022/08/19</td>
-                        <td>
-                        <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
-                        <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
-                        <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
-                        </td>
-                        </tr>
-                        
-                        <tr>
-                        <td><input type="text" id="new_website"></td>
-                        <td><input type="text" id="new_url"></td>
-                        <td><input type="text" id="new_date"></td>
-                        <td><input type="button" class="add" onclick="add_row();" value="Add Reference"></td>
-                        </tr>
-                        
-                        </table>
+                      <form>
+
+                        <div class="form-group">
+                          <label>website:</label>
+                          <input type="text" website="website" class="form-control" value="Google" required="">
                         </div>
+                    
+                        <div class="form-group">
+                          <label>url:</label>
+                          <input type="text" website="url" class="form-control" value="https://google.com" required="">
+                        </div>
+                    
+                        <button type="submit" class="btn btn-success save-btn">Save</button>
+                    
+                      </form>
+                      <br/>
+                      <table class="table table-bordered data-table">
+                        <thead>
+                          <th>website</th>
+                          <th>url</th>
+                          <th width="200px">Action</th>
+                        </thead>
+                        <tbody>
+                    
+                        </tbody>
+                      </table>                    
                     </div>
                   </div>
         <div class="slide" id="slide3">
