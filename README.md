@@ -1,7 +1,7 @@
 # Jotily: A Web Application for Study Management
+It's finally here! Jotily, the web application where you take control of your study and study the way you like to! Jotily combines 6 features that students use most when studying so that you won't have to jump from app to app, tab to tab!
 
-
-## Features
+## Features and Development
 
 ### Stopwatch and Pomodoro Timer 
 Although seemingly more appropriate according to users to implement a flow track timer, the pomodoro timer was chosen to be in the final prototype, due to time and skill level constraints. Creating an automated flow track timer and embeding that into the stopwatch functionality was too ambitious of a task and was scrapped for a more feasible solution. Users complained about the pomodoro timer for not being having enough feedback. This was improved by putting a progress bar at the top, across the screen. When the counter went down and users could see visually how far along they were in their study block or rest block.  
