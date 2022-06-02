@@ -15,4 +15,12 @@ The Kanban Board was difficult to implement into the final prototype, as it was 
 Initially a button for updating the html link was planned, however, post converting the code from JQuery, feedback from the tutor rendered the update function pointless. As this was a web application, it was suggested that users would merely add another link in the list and remove the old link. 
 
 ## Help
-
+There is an error with the server.js file (renamed to index.js), script code in package.json can be changed to this: 
+```
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build ./public/index.html",
+    "dev": "parcel serve ./public/index.html"
+  }
+```
