@@ -35,7 +35,7 @@
   progress {
     border-radius: 2px;
     width: 25%;
-    height: 12px;
+    height: 30px;
     position: fixed;
     transform: translate(-50%, -50%);
     top: 0;

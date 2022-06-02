@@ -1,0 +1,63 @@
+body {
+  color: #fff;
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 48px;
+  font-weight: 200;
+  line-height: 59px;
+}
+
+.stopwatch {
+  grid-row-gap: 23px;
+  width: 100%;
+  justify-items: center;
+  padding-top: 25px;
+  display: grid;
+}
+
+.circle {
+  height: 270px;
+  width: 270px;
+  color: #fff;
+  border: 2px solid;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.time {
+  color: #fff;
+  font-family: alata, sans-serif;
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.controls {
+  width: 187px;
+  justify-content: space-between;
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+#playButton {
+  display: block;
+}
+
+#pauseButton {
+  display: none;
+}
+
+/*# sourceMappingURL=index.e35f59b5.css.map */
