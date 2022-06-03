@@ -30,7 +30,7 @@ The Kanban Board was difficult to implement into the final prototype, as it was 
 ### Reading List Creator
 Initially a button for updating the html link was planned, however, post converting the code from JQuery, feedback from the tutor rendered the update function pointless. As this was a web application, it was suggested that users would merely add another link in the list and remove the old link. Each link could be opened up individually, but opening all of the tabs in one go was a challenge. This feature was not able to be done in the final prototype.
 
-![Left: Mockup, Right: Prototype](/public/img/reading%20list%20comparison.png)
+![Left: Mockup, Right: Prototype](/public/img/reading%20list%20creator%20comparison.png)
 
 ## Help
 When using command "npm run start", there is an error with the server.js file (renamed to index.js), script code in package.json can be changed to this: 
