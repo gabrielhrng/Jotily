@@ -17,6 +17,8 @@ This is all tied together through a clean slide interface.
 ### Stopwatch and Pomodoro Timer 
 Although seemingly more appropriate according to users to implement a flow track timer, the pomodoro timer was chosen to be in the final prototype, due to time and skill level constraints. Creating an automated flow track timer and embeding that into the stopwatch functionality was too ambitious of a task and was scrapped for a more feasible solution. Users complained about the pomodoro timer for not being having enough feedback. This was improved by putting a progress bar at the top, across the screen. When the counter went down and users could see visually how far along they were in their study block or rest block.  
 
+![This is the alt text](/public/img/stopwatch%20comparison.png)
+
 ### Music Player
 Based on user feedback before the development of the application, the music player was deemed as a distraction by our users whom attempted to study. Althought it had good reason to not be included, it was proposed to initially have very little functionality i.e. limited songs, no skip button/s. However in trying it out, it became even more distracting for users to not have control over this function and hence standard functionality was inplemented back into this feature. The final prototype still retains limited tracks for users to not be tempted to  "DJ" while doing work.
 
