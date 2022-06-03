@@ -22,6 +22,8 @@ Although seemingly more appropriate according to users to implement a flow track
 ### Music Player
 Based on user feedback before the development of the application, the music player was deemed as a distraction by our users whom attempted to study. Althought it had good reason to not be included, it was proposed to initially have very little functionality i.e. limited songs, no skip button/s. However in trying it out, it became even more distracting for users to not have control over this function and hence standard functionality was inplemented back into this feature. The final prototype still retains limited tracks for users to not be tempted to  "DJ" while doing work.
 
+![This is the alt text](/public/img/music%20player%20comparison.png)
+
 ### Kanban Board
 The Kanban Board was difficult to implement into the final prototype, as it was a pre-existing library that had an established structure. Basic work was done to conform the kanban board to fit into the aesthetic of the application, make sure that users could add their tasks on the board and could freely move their tasks from one board to another. Ideally, the kanban board would replace the tasklist, which the tasklist functioning as a pop up menu when a task was to be added. In the end, it was not possible to combine the tasklist and the board together, due to the complexity of the library.
 
